@@ -207,6 +207,7 @@
 #dash .show-apps .overview-icon {
   // lådan för showapps
   background-color: rgba(0,0,0,0) !important; // skriver över, ska bara dekorera knappen
+  //@extend %gradientFullShadow;
 }
 #dash .show-apps .show-apps-icon {
   // knappen för showapps
@@ -217,10 +218,12 @@
   //box-shadow: $dockDefaultIconShadow;
   box-shadow: inset  0 .5px 0 0 $adwaitaDarkBorderShadow;
   color: $textIconHoverColor;
+  box-shadow: $iconShadowCarapaceFar;
 }
 #dash .show-apps:hover .show-apps-icon {
   background-color: $adwaitaDarkButtonHover;
   color: $textIconFocusColor;
+  //box-shadow: $iconShadowCarapaceFar;
 }
 
 // dashToPanel ... Skter i den, det finns gott om tweaks inbyggt i den. I övrigt så följer den panel-färg vilket är rimligt.

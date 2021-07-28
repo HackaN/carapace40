@@ -923,7 +923,8 @@ background-image: url("common-assets/misc/close.svg");
   border: 1px solid rgba(13, 14, 16, 0.9);
   border-radius: 5px 5px 0 0;
   box-shadow: inset 0 0.5px 0 0 #4c4c4c;
-  color: white; }
+  color: white;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5); }
 
 #dash .show-apps:hover .show-apps-icon {
   background-color: #393939;
@@ -1369,7 +1370,8 @@ Gjs_ui_windowPreview_WindowPreview StIcon.icon-dropshadow {
 .icon-grid .app-well-app.app-folder > .overview-icon {
   background-color: transparent;
   background-gradient-direction: none;
-  border: 0 solid transparent; }
+  border: 0 solid transparent;
+  box-shadow: none; }
 
 .icon-grid .app-well-app.app-folder > .overview-icon StBoxLayout {
   border-radius: 5px; }
@@ -1378,13 +1380,14 @@ Gjs_ui_windowPreview_WindowPreview StIcon.icon-dropshadow {
   border-radius: 6px;
   padding-bottom: 0; }
 
-.icon-grid .app-well-app.app-folder:hover > .overview-icon StBoxLayout StIcon,
-.icon-grid .app-well-app-folder:selected > .overview-icon StBoxLayout StIcon,
+.icon-grid .app-well-app.app-folder:hover > .overview-icon-with-label StBoxLayout StIcon,
+.icon-grid .app-well-app-folder:selected > .overview-icon-with-label StBoxLayout StIcon,
 .icon-grid .app-well-app-folder:focus > .overview-icon StBoxLayout StIcon,
-.icon-grid .app-well-app.app-folder:hover > .overview-icon StBoxLayout StLabel,
-.icon-grid .app-well-app-folder:selected > .overview-icon StBoxLayout StLabel,
-.icon-grid .app-well-app-folder:focus > .overview-icon StBoxLayout Stlabel {
-  background-color: transparent;
+.icon-grid .app-well-app.app-folder:hover > .overview-icon-with-label StBoxLayout StLabel,
+.icon-grid .app-well-app-folder:selected > .overview-icon-with-label StBoxLayout StLabel,
+.icon-grid .app-well-app-folder:focus > .overview-icon-with-label StBoxLayout Stlabel {
+  background-color: #2a2a2a;
+  box-shadow: 0 0 0 #2a2a2a;
   border: transparent; }
 
 /*

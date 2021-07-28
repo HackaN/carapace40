@@ -172,6 +172,7 @@
   background-color: transparent;
   background-gradient-direction: none;
   border: 0 solid transparent;
+  box-shadow: none;
   //background-color: yellow;
 }
 
@@ -191,14 +192,18 @@
    padding-bottom: 0;
    //padding: 15px;
  }
- .icon-grid .app-well-app.app-folder:hover > .overview-icon StBoxLayout StIcon,
- .icon-grid .app-well-app-folder:selected > .overview-icon StBoxLayout StIcon,
+ .icon-grid .app-well-app.app-folder:hover > .overview-icon-with-label StBoxLayout StIcon,
+ .icon-grid .app-well-app-folder:selected > .overview-icon-with-label StBoxLayout StIcon,
  .icon-grid .app-well-app-folder:focus > .overview-icon StBoxLayout StIcon,
- .icon-grid .app-well-app.app-folder:hover > .overview-icon StBoxLayout StLabel,
- .icon-grid .app-well-app-folder:selected > .overview-icon StBoxLayout StLabel,
- .icon-grid .app-well-app-folder:focus > .overview-icon StBoxLayout Stlabel {
+ .icon-grid .app-well-app.app-folder:hover > .overview-icon-with-label StBoxLayout StLabel,
+ .icon-grid .app-well-app-folder:selected > .overview-icon-with-label StBoxLayout StLabel,
+ .icon-grid .app-well-app-folder:focus > .overview-icon-with-label StBoxLayout Stlabel {
    // försöker korrigera tillbaka för ikoner och skyltar i mappar
-   background-color: transparent;
+   //background-color: transparent; // kan ej vara "transparent"
+
+   // neutraliserar mappar vid :hover med samma som %sunkinglassHover
+   background-color: darken($overViewSunkBackground, 1%);
+   box-shadow: 0 0 0 darken($overViewSunkBackground, 1%);
    border: transparent;
  }
 
