@@ -277,10 +277,10 @@ StEntry,
 .dash-label {
   background-color: rgba(43, 43, 43, 0.75);
   border: 1px solid rgba(13, 14, 16, 0.9);
-  box-shadow: 0 0 3px black;
+  box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.5);
   color: whitesmoke;
   text-shadow: 0 0.06em 0.105em 0.06em black;
-  border-radius: 4px 4px 4px 4px !important;
+  border-radius: 5px !important;
   padding: 4px 10px 4px 10px !important; }
 
 .app-view-controls {
@@ -435,6 +435,18 @@ StEntry,
 /* Buttons */
 /* Check Boxes */
 /* Switches */
+.toggle-switch,
+.popup-menu-item.selected .toggle-switch {
+  background-color: transparent;
+  height: 22px;
+  width: 46px;
+  background-size: contain;
+  background-image: url("common-assets/misc/toggle off.svg"); }
+
+.toggle-switch:checked,
+.popup-menu-item.selected .toggle-switch:checked {
+  background-image: url("common-assets/misc/toggle on.svg"); }
+
 /* Slider */
 .slider {
   height: 15px;
@@ -698,11 +710,13 @@ background-image: url("common-assets/misc/close.svg");
   box-shadow: inset 0px 0.5px 0.5px rgba(245, 245, 250, 0); }
 
 #panel:overview {
-  background-color: rgba(64, 64, 64, 0.95);
-  /*border-top: 1px solid $overViewFrame; // för att täcka edge i overview
-  border-left: 0px solid $overViewFrame;
-  border-bottom: 0px solid $overViewFrame;
-  border-right: 0px solid $overViewFrame;*/ }
+  background-gradient-direction: vertical;
+  background-gradient-start: rgba(5, 10, 15, 0.15);
+  background-gradient-end: rgba(60, 65, 70, 0);
+  border-top: 1px solid #191e23;
+  border-left: 0px solid #191e23;
+  border-bottom: 0px solid #191e23;
+  border-right: 0px solid #191e23; }
 
 #panel:overview .panel-corner {
   -panel-corner-radius: 5px;
@@ -790,12 +804,29 @@ background-image: url("common-assets/misc/close.svg");
   padding: 0px !important; }
 
 /* panel transparency correction */
+/*
+.dpt-panel-maximized {
+  //(maximized state)
+  background-color: rgba(0,0,0,1);
+}
+#panel.dpt-panel-unmaximized {
+  //(unmaximized state)
+  background-color: rgba(250,0,0,1) !important;
+  opacity: 0% !important;
+}
+.panel-transparency {
+  //(used in the overview)
+  background-color: red;
+}*/
 #dash {
   color: white;
   font-size: 1.2em;
   padding: .3em .3em 0em 0em;
   background-color: transparent !important;
   border-color: transparent; }
+
+#dash StWidget.dash-background {
+  background-color: transparent !important; }
 
 /*#dashtodockBox,
 #dashtodockBox StBoxLayout {
@@ -924,7 +955,7 @@ background-image: url("common-assets/misc/close.svg");
   border-radius: 5px 5px 0 0;
   box-shadow: inset 0 0.5px 0 0 #4c4c4c;
   color: white;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5); }
+  box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.3); }
 
 #dash .show-apps:hover .show-apps-icon {
   background-color: #393939;
@@ -948,7 +979,11 @@ background-image: url("common-assets/misc/close.svg");
   background-color: transparent;
   color: rgba(255, 255, 255, 0.85);
   text-shadow: 0 1px 2.5px 1px rgba(0, 0, 0, 0.8);
-  icon-shadow: 0 1px 2.5px 1px rgba(0, 0, 0, 0.8); }
+  icon-shadow: 0 1px 2.5px 1px rgba(0, 0, 0, 0.8);
+  /*border: .5px solid transparent;
+     border-top: none;
+     border-left: none;
+     border-right: none;*/ }
 
 .message-media-control:insensitive,
 .message-media-control:insensitive > StIcon {
@@ -967,7 +1002,11 @@ background-image: url("common-assets/misc/close.svg");
 
 .popup-menu-item:checked {
   background-color: rgba(153, 153, 153, 0.3);
-  color: rgba(255, 255, 255, 0.85); }
+  color: rgba(255, 255, 255, 0.85);
+  /*border: .5px solid $adwaitaDarkBorder;
+     border-top: none;
+     border-left: none;
+     border-right: none;*/ }
 
 .popup-menu-item:checked .popup-menu-icon,
 .popup-menu-item:checked .system-switch-user-submenu-icon,
@@ -983,7 +1022,23 @@ background-image: url("common-assets/misc/close.svg");
 
 .popup-sub-menu {
   border: 0 none transparent;
-  font-size: .95em; }
+  font-size: .95em;
+  border: 0.5px solid rgba(240, 240, 240, 0.1);
+  border-top: none;
+  border-left: none;
+  border-right: none; }
+
+.popup-sub-menu .popup-menu-item:first-child {
+  border: 0.5px solid rgba(13, 14, 16, 0.9);
+  border-bottom: none;
+  border-left: none;
+  border-right: none; }
+
+.popup-sub-menu .popup-menu-item:last-child {
+  border: 0.5px solid rgba(13, 14, 16, 0.9);
+  border-top: none;
+  border-left: none;
+  border-right: none; }
 
 .popup-menu-boxpointer,
 .candidate-popup-boxpointer {
@@ -995,14 +1050,26 @@ background-image: url("common-assets/misc/close.svg");
      -arrow-rise: 8px;
      -arrow-box-shadow: 0 0 10px rgba(250,0,0,1) !important;*/
   -arrow-border-radius: 10px;
-  -arrow-background-color: rgba(38, 38, 38, 0.98);
-  -arrow-border-width: 1px;
-  -arrow-border-color: rgba(13, 14, 16, 0.9);
-  -arrow-base: 20px;
-  -arrow-rise: 10px;
-  -arrow-box-shadow: 10px black;
+  -arrow-background-color: rgba(0, 0, 0, 0);
+  -arrow-border-width: 0px;
+  -arrow-border-color: rgba(0, 0, 0, 0);
+  -arrow-base: 0px;
+  -arrow-rise: 0px;
+  -arrow-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+  -arrow-box-shadow: 0 1px 3px #fa0000 !important;
   -box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
   -arrow-shadow: 0 2px 10px rgba(0, 0, 0, 0.8); }
+
+.popup-menu {
+  margin-top: 0px !important; }
+
+.popup-menu-content {
+  box-shadow: 0 5px 8px 0px rgba(0, 0, 0, 0.4);
+  background-color: rgba(38, 38, 38, 0.98);
+  margin: 10px;
+  margin-top: 5px;
+  border: 1px solid rgba(13, 14, 16, 0.9);
+  border-radius: 10px; }
 
 .gsconnect-device-section {
   font-size: .9em !important; }
@@ -1052,7 +1119,10 @@ PopupMenu.PopupMenuSection {
   color: white; }
 
 #calendarArea .message {
-  padding: -2px !important; }
+  padding: -2px !important;
+  background-color: transparent !important;
+  border: 0.05em solid rgba(43, 43, 43, 0.75);
+  box-shadow: none; }
 
 #calendarArea .message,
 #calendarArea .message-title,
@@ -1093,9 +1163,9 @@ PopupMenu.PopupMenuSection {
 #calendarArea .message:active:hover {
   /*background-color: $textIconColorBrightNano;
   box-shadow: $textIconMediumShadow;*/
-  background-color: rgba(69, 69, 69, 0.75);
-  border: 0.05em solid rgba(220, 220, 220, 0.05);
-  box-shadow: 0 0.06em 0.25em 0.095em rgba(0, 0, 0, 0.4); }
+  background-color: #393939 !important;
+  border: 0.5px solid rgba(220, 220, 220, 0.05);
+  box-shadow: 0 0.06em 0.106em 0.06em rgba(0, 0, 0, 0.4); }
 
 #calendarArea .message-media-control > StIcon {
   color: rgba(255, 255, 255, 0.7);
@@ -1325,8 +1395,7 @@ Gjs_ui_windowPreview_WindowPreview StIcon.icon-dropshadow {
 
 .icon-grid .app-well-app .overview-icon StIcon,
 .search-section .app-well-app .overview-icon StIcon {
-  border-radius: 128px;
-  padding: 4px; }
+  border-radius: 128px; }
 
 /*
  // något med text ändring pajar expandering av etiketter

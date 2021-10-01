@@ -46,11 +46,6 @@ gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme false
 echo "	→ Deactivate built in theme"
 gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
 echo "	→ Shrink the Dash"
-gsettings set org.gnome.shell.extensions.dash-to-dock custom-background-color true
-echo "	→ Use custom background color"
-oldBGcolor="$(gsettings get org.gnome.shell.extensions.dash-to-dock background-color)"
-gsettings set org.gnome.shell.extensions.dash-to-dock background-color 'rgba(0,0,0,0)'
-echo "	... which is like transparent and whatnot *"
 gsettings set org.gnome.shell.extensions.dash-to-dock icon-size-fixed true
 echo "	→ Nobody likes super-small icons you can't see"
 gsettings set org.gnome.shell.extensions.dash-to-dock running-indicator-style 'DEFAULT'
@@ -59,7 +54,7 @@ echo "
 	-----------------------------------------------------------------------------
 	
 	
-	* For reference, your previous background color setting was: $oldBGcolor
+	
 	"
 echo "
 	That's it. The dash should look awesome now.

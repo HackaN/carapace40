@@ -14,6 +14,9 @@
   //@extend %dashPureCode;
 }
 
+#dash StWidget.dash-background {
+  background-color: transparent !important;
+}
 /*#dashtodockBox,
 #dashtodockBox StBoxLayout {
   @extend %dashSVG3_scalable;
@@ -197,6 +200,7 @@
 .dash-label {
   @extend %dashLabelAdwaitaDark;
   -x-offset: -.2em; // 3px :-);
+  //-y-offset: 12px;
 }
 
 #dash .show-apps {
@@ -218,7 +222,7 @@
   //box-shadow: $dockDefaultIconShadow;
   box-shadow: inset  0 .5px 0 0 $adwaitaDarkBorderShadow;
   color: $textIconHoverColor;
-  box-shadow: $iconShadowCarapaceFar;
+  box-shadow: $iconShadowCarapaceFarLess;
 }
 #dash .show-apps:hover .show-apps-icon {
   background-color: $adwaitaDarkButtonHover;

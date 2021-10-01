@@ -82,7 +82,7 @@
    //@extend %flashLightOff;
    @extend %floatingPlateTransparent;
    border-radius: 128px;
-   padding: 4px;
+   //padding: 4px; // vet inte varför jag ens hade den här...
    //margin-bottom: 0;
  }
  .icon-grid .app-well-app:hover .overview-icon StIcon,

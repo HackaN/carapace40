@@ -62,13 +62,14 @@ $textIconDefaultColor: #fff;
 // lite svårt, men 11pt så är 1px typ .063em, 1.5px .095em, 2px .126em, 2.5px .158em 3px .189em, 4px .252em, 5px .315em
 
 // vågrätt lodrätt spridning tjocklek färg
-
+$menuShadowCarapace: 0 5px 8px 0px rgba(0,0,0,.4);
 $iconShadowCarapaceFullBelow: 0 -1px 5px 3px rgba(0,0,0,1);
 $iconShadowCarapaceCloseBelow: 0 -1px 5px 2px rgba(0,0,0,.9);
 $textShadowCarapaceCloseBelow: 0 -1px 3px 2px rgba(0,0,0,.8);
 $iconShadowCarapaceClose: 0 0 5px 2px rgba(0,0,0,.7);
 $iconShadowCarapaceFar: 0 0 10px 2px rgba(0,0,0,.5);
 $textShadowCarapaceFar: 0 0 5px 2px rgba(0,0,0,.5);
+$iconShadowCarapaceFarLess: 0 0 7px 2px rgba(0,0,0,.3);
 $iconShadowCarapaceHalf: 0 2px 5px 3px rgba(0,0,0,.7);
 $iconShadowCarapaceFull: 0 2px 5px 3px rgba(0,0,0,1);
 $iconShadowCarapaceStraightHalf: 0 0 3px 3px rgba(0,0,0,.5);
@@ -592,10 +593,10 @@ border: .5px solid rgba(78,78,78,1);
 %dashLabelAdwaitaDark {
   background-color: $adwaitaDark2;
   border: 1px solid $adwaitaDarkBorder;
-  box-shadow: 0 0 3px black;
+  box-shadow: 0 0 1px 0px rgba(0,0,0,.5);
   color: $textIconFocusColor;
   text-shadow: $textIconSolidShadow;
-  border-radius: 4px 4px 4px 4px !important;
+  border-radius: 5px !important; //4px 4px 4px 4px !important;
   padding: 4px 10px 4px 10px !important;
 }
 %dashLabelAdwaitaNotSoDark {

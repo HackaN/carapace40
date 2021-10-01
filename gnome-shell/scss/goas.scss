@@ -119,8 +119,27 @@ StEntry:active,
 /* Check Boxes */
 // FIXME:
 
+
 /* Switches */
-// FIXME:
+// gör etch-effekt på kant i inkscape med underlager 1px rgba(240,240,240,.1) blurar 12% | sedan lådan med 1px rgba(0,0,0,.6) blurrar 12%
+.toggle-switch,
+.popup-menu-item.selected .toggle-switch {
+  //color: #2e3436;
+  //@extend %sunkinglassDimmed;
+  background-color: transparent;
+  height: 22px;
+  width: 46px;
+  //border-radius: 22px;
+  //box-shadow: inset 0 0 5px black;
+  background-size: contain;
+  //background-size: cover;
+  background-image: url("common-assets/misc/toggle off.svg");
+}
+  .toggle-switch:checked,
+  .popup-menu-item.selected .toggle-switch:checked {
+    //background-color: darken($textIconColorBrightSub, 20%);
+    background-image: url("common-assets/misc/toggle on.svg");
+  }
 
 /* Slider */
 .slider { // volym och skärmljus

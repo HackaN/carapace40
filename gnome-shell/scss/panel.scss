@@ -186,11 +186,14 @@ background-image: url("common-assets/panel/GnomeFootVit_48px_.9_ny skugga.svg");
   //transition-duration: 0ms !important;
   //box-shadow: 0 0 0 2px rgba(250,0,0,1) !important;
   // för att täcka ljusa kanten
-  background-color: lighten($adwaitaDark1AlmostSolid, 10%);
-  /*border-top: 1px solid $overViewFrame; // för att täcka edge i overview
+  //background-color: lighten($adwaitaDark1AlmostSolid, 10%);
+  background-gradient-direction: vertical;
+  background-gradient-start: rgba(5,10,15,.15);
+  background-gradient-end: rgba(60,65,70,.0);
+  border-top: 1px solid $overViewFrame; // för att täcka edge i overview
   border-left: 0px solid $overViewFrame;
   border-bottom: 0px solid $overViewFrame;
-  border-right: 0px solid $overViewFrame;*/
+  border-right: 0px solid $overViewFrame;
   //border: 1px solid red !important;
   }
   #panel:overview .panel-corner {
@@ -318,3 +321,17 @@ background-image: url("common-assets/panel/GnomeFootVit_48px_.9_ny skugga.svg");
   padding: 0px !important;
 }
 /* panel transparency correction */
+/*
+.dpt-panel-maximized {
+  //(maximized state)
+  background-color: rgba(0,0,0,1);
+}
+#panel.dpt-panel-unmaximized {
+  //(unmaximized state)
+  background-color: rgba(250,0,0,1) !important;
+  opacity: 0% !important;
+}
+.panel-transparency {
+  //(used in the overview)
+  background-color: red;
+}*/

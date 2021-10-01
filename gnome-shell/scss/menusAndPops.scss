@@ -25,6 +25,10 @@
      color: $textIconColorBrightMediumStrong;
      text-shadow: $textIconDefaultShadow;
      icon-shadow: $textIconDefaultShadow;
+     /*border: .5px solid transparent;
+     border-top: none;
+     border-left: none;
+     border-right: none;*/
    }
 
    .message-media-control:insensitive,
@@ -52,6 +56,10 @@
      //@extend %brightOnDark;
      background-color: darken($textIconColorBrightSub, 40%);
      color: $textIconColorBrightMediumStrong;
+     /*border: .5px solid $adwaitaDarkBorder;
+     border-top: none;
+     border-left: none;
+     border-right: none;*/
    }
 
    .popup-menu-item:checked .popup-menu-icon,
@@ -80,11 +88,32 @@
      //border: 1px solid $textIconColorDarkNano;
      border: 0 none transparent;
      font-size: .95em;
+     border: .5px solid rgba(240,240,240,.1);
+     border-top: none;
+     border-left: none;
+     border-right: none;
+     //box-shadow: 0 1px 0 1px white;
    }
    .popup-sub-menu .popup-menu-item {
      //background-color: $adwaitaDark1;
      //color: $textIconColorBrightSolid;
    }
+
+   .popup-sub-menu .popup-menu-item:first-child {
+     border: .5px solid $adwaitaDarkBorder;
+     border-bottom: none;
+     border-left: none;
+     border-right: none;
+   }
+
+   .popup-sub-menu .popup-menu-item:last-child {
+     // oj oj oj, så fett
+     border: .5px solid $adwaitaDarkBorder;
+     border-top: none;
+     border-left: none;
+     border-right: none;
+   }
+
 
    .popup-sub-menu .popup-separator-menu-item {
      //@extend %floatingglassClear;
@@ -107,17 +136,39 @@
      -arrow-box-shadow: 0 0 10px rgba(250,0,0,1) !important;*/
      -arrow-border-radius: 10px;
      //-arrow-background-color: $menuBG;
-     -arrow-background-color: lighten($adwaitaDark1AlmostSolid95, 0%);
-     -arrow-border-width: 1px; // kan inte vara .5px på 100% displayer, hela menyn blir felskalad och uppkukad
-     -arrow-border-color: $adwaitaDarkBorder; // sexy as hell
+     //-arrow-background-color: lighten($adwaitaDark1AlmostSolid95, 0%);
+     -arrow-background-color: rgba(0,0,0,.0);
+     -arrow-border-width: 0px; // kan inte vara .5px på 100% displayer, hela menyn blir felskalad och uppkukad
+     //-arrow-border-color: $adwaitaDarkBorder; // sexy as hell
+     -arrow-border-color: rgba(0,0,0,0);
      //-arrow-border-color: $adwaitaBrightBorder;
      //-arrow-border-color: darken($textIconColorBrightSub, 40%);
-     -arrow-base: 20px;
-     -arrow-rise: 10px;
+     -arrow-base: 0px; //20px
+     -arrow-rise: 0px; //10px
      //-arrow-box-shadow: $boxShadowMassive !important;
-     -arrow-box-shadow: 10px black;
+     -arrow-box-shadow: $iconShadowCarapaceFar;
+     -arrow-box-shadow: 0 1px 3px rgba(250, 0, 0, 1) !important;
      -box-shadow: $boxShadowMassive;
      -arrow-shadow: $boxShadowMassive;
+    }
+    //.popup-menu-boxpointer
+    //.popup-menu
+    // .popup-menu-boxpointer & .popup-menu är i princip samma
+    .popup-menu {
+      //padding: 30px !important;
+      //box-shadow: $iconShadowCarapaceFar;
+      //-arrow-background-color: lighten($adwaitaDark1AlmostSolid95, 0%);
+      margin-top: 0px !important;
+      //padding: 10px;
+      //padding-top: 3px;
+    }
+    .popup-menu-content {
+      box-shadow: $menuShadowCarapace;
+      background-color: lighten($adwaitaDark1AlmostSolid95, 0%);
+      margin: 10px;
+      margin-top: 5px;
+      border: 1px solid $adwaitaDarkBorder; // sexy as hell
+      border-radius: 10px;
     }
 
 // GSConnect meny Tweaks // FIXME
@@ -195,6 +246,9 @@ PopupMenu.PopupMenuSection {
 #calendarArea .message {
     //border: 0 none transparent !important;
     padding: -2px !important; // annars så blir det fula kanter runt media-knapparna
+    background-color: transparent !important;
+    border: .05em solid lighten($adwaitaDark2, 0%);
+    box-shadow: none;
 }
 #calendarArea .message,
 #calendarArea .message-title,
@@ -205,9 +259,12 @@ PopupMenu.PopupMenuSection {
   color: $textIconColorBrightMediumStrong;
 }
 #calendarArea .message-body {
+  // texten
   color: $textIconColorBrightMedium;
   font-size: .95em;
   line-height: 1.05em;
+}
+#calendarArea .message .message-secondary-bin {
 }
 #calendarArea .message .message-secondary-bin > .event-time {
   color: transparent;
@@ -232,15 +289,20 @@ PopupMenu.PopupMenuSection {
   icon-shadow: $textIconDefaultShadow;
   color: $textIconColorBrightSolid;
 }
+
+
 #calendarArea .message:hover,
 #calendarArea .message:focus:hover,
 #calendarArea .message:active:hover {
   /*background-color: $textIconColorBrightNano;
   box-shadow: $textIconMediumShadow;*/
   //@extend %dashLabelAdwaitaNotSoDark;
-  background-color: lighten($adwaitaDark2, 10%);
-  border: .05em solid darken($textIconColorBrightHypoNano, 0%);
-  box-shadow: $textIconMediumShadowBig;//0 0 .18em black;
+  //background-color: lighten($adwaitaDark2, 10%) !important;
+  background-color: $adwaitaDarkButtonHover !important;
+  border: .5px solid $textIconColorBrightHypoNano;
+  //border: .5px solid $textIconColorBrightNano; // den funkar
+  //box-shadow: $textIconMediumShadowBig;//0 0 .18em black;
+  box-shadow: $textIconMediumShadow;
 }
 #calendarArea .message-media-control > StIcon {
   color: $textIconColorBrightMedium;
