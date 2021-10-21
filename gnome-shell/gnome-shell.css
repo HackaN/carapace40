@@ -825,8 +825,30 @@ background-image: url("common-assets/misc/close.svg");
   background-color: transparent !important;
   border-color: transparent; }
 
+/*
+#dash StWidget .overview-icon {
+  //border: 1px green solid;
+  margin-bottom: 0px;
+}
+
+#dash .app-well-app > * StWidget {
+  //border: 1px blue solid;
+  margin-bottom: 0px !important;
+}
+#dash .dash-item-container {
+  //border: 1px solid green;
+  height: 72px;
+}
+#dash .dash-item-container StWidget {
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}*/
 #dash StWidget.dash-background {
-  background-color: transparent !important; }
+  background-color: transparent !important;
+  margin-bottom: 0px;
+  padding: 0px;
+  border-color: yellow;
+  border-radius: 0px; }
 
 /*#dashtodockBox,
 #dashtodockBox StBoxLayout {
