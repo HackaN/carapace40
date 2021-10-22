@@ -847,7 +847,7 @@ background-image: url("common-assets/misc/close.svg");
   background-color: transparent !important;
   margin-bottom: 0px;
   padding: 0px;
-  border-color: yellow;
+  border-color: transparent;
   border-radius: 0px; }
 
 /*#dashtodockBox,
